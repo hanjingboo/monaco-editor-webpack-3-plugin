@@ -1,4 +1,6 @@
-const webpack = require('webpack');
+const singleEntry = require('webpack/lib/SingleEntryPlugin');
+const loaderTarget = require('webpack/lib/LoaderTargetPlugin');
+const webworker = require('webpack/lib/webworker/WebWorkerTemplatePlugin');
 
 class AddWorkerEntryPointPlugin {
   constructor({
@@ -13,7 +15,7 @@ class AddWorkerEntryPointPlugin {
 
   apply(compiler) {
     const { id, entry, filename, chunkFilename, plugins } = this.options;
-    compiler.hooks.make.tapAsync('AddWorkerEntryPointPlugin', (compilation, callback) => {
+    compiler.plugin('make', (compilation, callback) => {
       const outputOptions = {
         filename,
         chunkFilename,
@@ -22,9 +24,9 @@ class AddWorkerEntryPointPlugin {
         globalObject: 'this',
       };
       const childCompiler = compilation.createChildCompiler(id, outputOptions, [
-        new webpack.webworker.WebWorkerTemplatePlugin(),
-        new webpack.LoaderTargetPlugin('webworker'),
-        new webpack.SingleEntryPlugin(compiler.context, entry, 'main'),
+        new webworker(),
+        new loaderTarget('webworker'),
+        new singleEntry(compiler.context, entry, 'main'),
       ]);
       plugins.forEach((plugin) => plugin.apply(childCompiler));
       childCompiler.runAsChild(callback);

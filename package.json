@@ -1,14 +1,14 @@
 {
-  "name": "monaco-editor-webpack-plugin",
+  "name": "monaco-editor-webpack-3-plugin",
   "version": "1.1.0",
-  "description": "A webpack plugin for the Monaco Editor",
+  "description": "A webpack 3 plugin for the Monaco Editor",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/monaco-editor-webpack-plugin.git"
+    "url": "git+https://github.com:hanjingboo/monaco-editor-webpack-3-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -19,11 +19,11 @@
   "author": "Microsoft Corporation",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Microsoft/monaco-editor-webpack-plugin/issues"
+    "url": "https://github.com/hanjingboo/monaco-editor-webpack-3-plugin/issues"
   },
-  "homepage": "https://github.com/Microsoft/monaco-editor-webpack-plugin#readme",
+  "homepage": "https://github.com/hanjingboo/monaco-editor-webpack-3-plugin#readme",
   "peerDependencies": {
-    "webpack": "^4.5.0",
+    "webpack": "^3.10.0",
     "monaco-editor": "^0.12.0"
   }
 }

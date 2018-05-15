@@ -1,36 +1,40 @@
 # Monaco Editor Webpack Loader Plugin
 
+[Webpack 3 support](https://github.com/Microsoft/monaco-editor-webpack-plugin/issues/5)
+
 A plugin to simplify loading the [Monaco Editor](https://github.com/Microsoft/monaco-editor) with [webpack](https://webpack.js.org/) contributed by [Tim Kendrik](https://github.com/timkendrick).
 
 ## Installing
+
 ```sh
-npm install monaco-editor-webpack-plugin
+npm install monaco-editor-webpack-3-plugin
 ```
 
 ## Using
+
 * `webpack.config.js`:
+
 ```js
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const MonacoWebpackPlugin = require("monaco-editor-webpack-3-plugin");
 
 module.exports = {
-  entry: './index.js',
+  entry: "./index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'app.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "app.js"
   },
-  plugins: [
-    new MonacoWebpackPlugin()
-  ]
+  plugins: [new MonacoWebpackPlugin()]
 };
 ```
 
 * `index.js`:
-```js
-import * as monaco from 'monaco-editor';
 
-monaco.editor.create(document.getElementById('container'), {
+```js
+import * as monaco from "monaco-editor";
+
+monaco.editor.create(document.getElementById("container"), {
   value: 'console.log("Hello, world")',
-  language: 'javascript'
+  language: "javascript"
 });
 ```
 
@@ -47,7 +51,7 @@ Options can be passed in to `MonacoWebpackPlugin`. They can be used to generate 
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
