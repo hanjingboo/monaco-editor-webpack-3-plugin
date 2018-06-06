@@ -1,6 +1,6 @@
 {
   "name": "monaco-editor-webpack-3-plugin",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "A webpack 3 plugin for the Monaco Editor",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/hanjingboo/monaco-editor-webpack-3-plugin#readme",
   "peerDependencies": {
-    "webpack": "^3.10.0",
-    "monaco-editor": "^0.12.0"
+    "webpack": "^3.12.0",
+    "monaco-editor": "^0.13.1"
   }
 }
